@@ -1,0 +1,53 @@
+.border{
+	border: 1px solid;
+    padding: 34px;
+    border-radius: 1px;
+}
+.margin_left{
+	margin-left: 4px;
+}
+
+.blancoB{
+	background: white;
+	border: 1px solid;
+	height: 50px;
+	width: 100%;
+	margin-top: 10px;
+}
+.naranjaB{
+	background: orange;
+	border: 1px solid;
+	height: 50px;
+	width: 100%;
+	margin-top: 10px;
+}
+.azulB{
+	background: #0d98e8;
+	border: 1px solid;
+	height: 50px;
+	width: 100%;
+	margin-top: 10px;
+}
+.grisB{
+	background: gray;
+	border: 1px solid;
+	height: 50px;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.blancoC{
+	color: white;
+}
+.naranjaC{
+	color: orange;
+}
+.azulC{
+	color: #0d98e8;
+}
+.grisC{
+	color: gray;
+}
+.fondo_gray{
+	background: #ccc;
+}

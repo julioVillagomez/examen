@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+ 
+<html lang="es" ng-app="examen">
+ 
+<head>
+<title>examen</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+ 
+<body ng-controller="ExamenController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 border">
+				<form class="form-horizontal">
+					<h3>Filtro por color</h3>
+				 	<fieldset>
+				 		<div class="form-group">
+				 			<div class="col-xs-9">
+						    	<div class="radio">
+							    	<label>
+								      <input id="filter_color" name="filter_color" ng-model="colores" value="" type="radio">
+								      Todos
+							  		</label>
+							    </div>
+							    <div class="radio">
+								    <label>
+								      <input id="filter_color" name="filter_color" ng-model="colores" value="naranja" type="radio">
+								      Naranja
+								  	</label>
+							    </div>
+							    <div class="radio">
+							    	<label>
+								      <input id="filter_color" name="filter_color" ng-model="colores" value="azul" type="radio">
+								      Azul
+							  		</label>
+							    </div>
+
+							    <div class="radio">
+							    	<label>
+								      <input id="filter_color" name="filter_color" ng-model="colores" value="gris" type="radio">
+								      Gris
+							  		</label>
+							    </div>
+						   </div>
+				 		</div>	
+				 	</fieldset>
+				 	<h3>Cambiar Vista</h3>
+				 	<fieldset>
+				 		<div class="form-group">
+				 			<div class="col-xs-9">
+						    	<div class="radio">
+							    	<label>
+								      <input id="filter_type" name="filter_type" ng-model="cambiar_vista" value="1" type="radio">
+								      Mosaicos
+							  		</label>
+							    </div>
+							    <div class="radio">
+								    <label>
+								      <input id="filter_type"  name="filter_type" ng-model="cambiar_vista" value="2" type="radio">
+								      Lista
+								  	</label>
+							    </div>
+							   
+						   </div>
+				 		</div>	
+				 	</fieldset>
+				</form>
+			</div>
+			<div class="col-md-7 border margin_left" ng-class="{'fondo_gray': cambiar_vista=='2'}">
+				<div class="col-md-3" ng-repeat="item in arreglo | filter: { color: colores }" ng-if="cambiar_vista=='1'">
+					<div class="cuadro" ng-class="{'blancoB' : item.color=='blanco','naranjaB' : item.color=='naranja','azulB' : item.color=='azul','grisB' : item.color=='gris'}" >
+
+						<b>{{item.numero}}</b>
+
+					</div>
+				</div>
+				<div class="col-md-6 " ng-if="cambiar_vista=='2'" >
+					<ul>
+						<li ng-class="{'blancoC' : item.color=='blanco','naranjaC' : item.color=='naranja','azulC' : item.color=='azul','grisC' : item.color=='gris'}" ng-repeat="item in lista | filter: { color: colores }"> <b>{{item.numero}}</b></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</html>
